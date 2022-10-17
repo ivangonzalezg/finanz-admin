@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-// components
-
-export default function CardTable({ color, data }) {
+export default function CardClients({ color, clients }) {
   return (
     <div
       className={
@@ -59,19 +58,23 @@ export default function CardTable({ color, data }) {
             </tr>
           </thead>
           <tbody>
-            {data.map(user => (
+            {clients.map(client => (
               <tr>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-left flex items-center">
                   <span className={"font-bold " + +(color === "light" ? "text-blueGray-600" : "text-white")}>
-                    {user.fullName}
+                    {client.fullName}
                   </span>
                 </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4">{user.phone}</td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4">
-                  {user.plan.name}
+                  {client.phone}
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4">
-                  {user.paymentDate}
+                  <Link to="/plans" style={{ textDecoration: "underline" }}>
+                    {client.plan.name}
+                  </Link>
+                </td>
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4">
+                  {client.paymentDate}
                 </td>
               </tr>
             ))}
@@ -82,11 +85,11 @@ export default function CardTable({ color, data }) {
   );
 }
 
-CardTable.defaultProps = {
+CardClients.defaultProps = {
   color: "light"
 };
 
-CardTable.propTypes = {
+CardClients.propTypes = {
   color: PropTypes.oneOf(["light", "dark"]),
   data: PropTypes.array.isRequired
 };
