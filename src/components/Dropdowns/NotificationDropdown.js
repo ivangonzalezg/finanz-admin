@@ -7,9 +7,8 @@ const NotificationDropdown = () => {
   const btnDropdownRef = React.createRef();
   const popoverDropdownRef = React.createRef();
   const openDropdownPopover = () => {
-    console.log("hey");
     createPopper(btnDropdownRef.current, popoverDropdownRef.current, {
-      placement: "bottom-start",
+      placement: "bottom-start"
     });
     setDropdownPopoverShow(true);
   };
@@ -22,7 +21,7 @@ const NotificationDropdown = () => {
         className="text-blueGray-500 block py-1 px-3"
         href="#pablo"
         ref={btnDropdownRef}
-        onClick={(e) => {
+        onClick={e => {
           e.preventDefault();
           dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
         }}
@@ -38,38 +37,30 @@ const NotificationDropdown = () => {
       >
         <a
           href="#pablo"
-          className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-          }
-          onClick={(e) => e.preventDefault()}
+          className={"text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"}
+          onClick={e => e.preventDefault()}
         >
           Action
         </a>
         <a
           href="#pablo"
-          className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-          }
-          onClick={(e) => e.preventDefault()}
+          className={"text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"}
+          onClick={e => e.preventDefault()}
         >
           Another action
         </a>
         <a
           href="#pablo"
-          className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-          }
-          onClick={(e) => e.preventDefault()}
+          className={"text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"}
+          onClick={e => e.preventDefault()}
         >
           Something else here
         </a>
         <div className="h-0 my-2 border border-solid border-blueGray-100" />
         <a
           href="#pablo"
-          className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-          }
-          onClick={(e) => e.preventDefault()}
+          className={"text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"}
+          onClick={e => e.preventDefault()}
         >
           Seprated link
         </a>
