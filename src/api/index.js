@@ -1,7 +1,7 @@
 import axios from "axios";
 import { capitalize } from "../utils";
 
-const baseURL = process.env.NODE_ENV === "development" ? "http://localhost:1342/api" : "http://api.finanz.ivangonzalez.co/api";
+const baseURL = process.env.NODE_ENV === "development" ? "http://localhost:1342/api" : "https://api.finanz.ivangonzalez.co/api";
 
 const API = (jwt = "") =>
   axios.create({
